@@ -59,7 +59,7 @@ define jenkins::plugin($version=0) {
     "${plugin_dir}/${plugin}" :
       require => Exec["download-${name}"],
       owner   => 'jenkins',
-      mode    => '0644',
+      mode    => '0664',
       notify  => Service['jenkins']
   }
 }
